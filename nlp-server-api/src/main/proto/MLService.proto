@@ -1,0 +1,22 @@
+syntax = "proto3";
+package org.example;
+
+message MLRequest {
+
+  string text = 1;
+
+}
+
+message MLResponse {
+
+  string text = 1;
+
+  string label = 2;
+
+  double score = 3;
+
+}
+
+service MLService {
+  rpc classify (MLRequest) returns (MLResponse);
+}
